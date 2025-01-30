@@ -1,0 +1,153 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap'); */
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: "Open Sans", sans-serif;
+}
+body {
+   max-width: 600px;
+   margin: 10px;
+   background-color: #dbdbdb;
+   margin: auto;
+}
+.head {
+   display: flex;
+   margin-bottom: 10px;
+   padding-top: 20px;
+}
+.title { font-size: 24px; }
+.head {
+   text-align: center;
+   justify-content: space-between;
+   margin: 0 20px;
+   font-size: 12px;
+}
+.head img {
+   width: 32px;
+   border-radius: 50%;
+   box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+}
+hr {
+   margin: 20px 20px;
+}
+/* Container du haut */
+.top-container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+#total {
+   width: 75%;
+   font-size: 2em;
+   margin: 20px 0;
+   padding: 10px;
+   background-color: #ffdbff;
+   text-align: center;
+   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.btn {
+   width: 75%;
+   padding: 10px 20px;
+   background-color: #b900b9;
+   color: #fff;
+   font-weight: 600;
+   border: none;
+   cursor: pointer;
+   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.btn:hover {
+   opacity: 0.8;
+   scale: 1.1;
+}
+
+/* Container du bas */
+#transactions-list {
+   margin-top: 20px;
+   padding: 0 20px;
+   list-style: none;
+   display: flex;
+   flex-direction: column;
+   /* align-items: center; */
+}
+.transaction {
+   display: flex;
+   justify-content: space-between;
+}
+.negative { color: red; }
+.positive { color: green }
+
+/* Modale */
+.modal {
+   display: none;
+   position: fixed;
+   top: 0;
+   left: auto;
+   width: 300px;
+   background-color: rgba(0, 0, 0, 0.5);
+   z-index: 1000;
+}
+.modal-content {
+   width: 100%;
+   background-color: #fff;
+   margin: 10px;
+   padding: 20px;
+   border-radius: 7px;
+   position: relative;
+}
+.close {
+   position: absolute;
+   top: 10px;
+   right: 10px;
+   cursor: pointer;
+   font-size: 20px;
+}
+.modal-title {
+   font-size: 1.1em;
+   margin-bottom: 5px;
+}
+.form-group {
+   padding: 3px;
+   box-shadow:0px 2px 2px rgba(0, 0, 0, 0.1) ;
+   border-radius: 5px;
+}
+.form-group input,
+.form-group select {
+   border: none;
+}
+.form-group input::placeholder {
+   padding-left: 3px;
+}
+.modal-content button {
+   margin-top: 10px;
+   width: 100%;
+   background-color: #b900b9;
+   color: #fff;
+   padding: 5px;
+   font-weight: 600;
+   border: none;
+   box-shadow:0px 2px 2px rgba(0, 0, 0, 0.1) ;
+   border-radius: 5px;
+}
+
+
+.tag {
+   display: none;
+   /* display: block; */
+}
+
+/* bouton pour vider le localStorage */
+.btn-reset {
+   display: none;
+   margin: 100px auto 0;
+   font-size: 32px;
+   font-weight: 500;
+   background-color: #b900b9;
+   color: #fff;
+   padding: 10px 20px;
+   border-radius: 50%;
+   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+   border: none;
+   justify-content: center;
+}

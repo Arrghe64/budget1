@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="theme-color" content="#b900b9">
+   <title>Budget</title>
+   <link rel="shortcut icon" href="favicon.png">
+   <link rel="apple-touch-icon" href="apple-touch-icon.png">
+   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+   <header class="head">
+      <img src="./img/logo.png" alt="logo">
+      <h1 class="title">Suivi Budget</h1>
+   </header>
+   <hr>
+   <!-- Récupération du solde -->
+   <div class="top-container">
+      <div id="total">0.00</div>
+      <button class="btn" id="add-amount">Ajouter</button>
+   </div>
+   <hr>
+   <!-- Modale pour ajouter une somme (positive ou négative) -->
+   <div class="modal" id="transactionModal">
+      <div class="modal-content">
+         <span class="close" id="close-modal">&times;</span>
+         <h3 class="modal-title">Nouvelle transaction</h3>
+
+         <div class="transaction-form">
+            <form action="" id="transactionForm">
+               <div class="form-group">
+                  <input type="text" id="description"
+                         placeholder="Description" required>
+               </div>
+               <div class="form-group">
+                  <input type="number" id="amount" step="any"
+                         placeholder="Somme" required>
+               </div>
+               <div class="form-group">
+                  <select name="" id="tag">
+                     <option value="">Choisir un tag</option>
+                  </select>
+               </div>
+               <button class="addOnTotal" type="submit">Ajouter</button>
+            </form>
+         </div>
+
+         <!-- Pour ajouter un tag personnalisé -->
+         <!-- <div class="tag" id="add-tag">
+            <label class="tag-label" for="tag">Choisir un tag</label>
+            <select name="tag" id="tag-select">
+               <option value="">TAG ?</option>
+               <option value="loyer">Loyer</option>
+               <option value="loyer">Loyer</option>
+               <option value="loyer">Loyer</option>
+            </select>
+         </div> -->
+
+      </div>
+   </div>
+
+   <!-- Liste des sommes ajoutées avec leur tag -->
+   <div class="list" >
+      <ul id="transactions-list"></ul>
+   </div>
+   <hr>
+   <div class="resetList">
+      <button class="btn-reset" id="reset-transactions">🗑</button>
+   </div>
+
+
+   <script src="script.js"></script>
+</body>
+</html>
