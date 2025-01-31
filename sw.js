@@ -3,7 +3,7 @@ const urlsToCache = [
   "./",
   "./index.html",
   "./script.js",
-  "./style.css",
+  "./css/style.css", // Vérifie bien ce chemin !
   "./manifest.json",
 ];
 
@@ -11,7 +11,9 @@ self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       console.log("Cache ouvert");
-      return cache.addAll(urlsToCache);
+      return cache
+        .addAll(urlsToCache)
+        .catch((err) => console.error("Erreur de cache:", err));
     })
   );
 });

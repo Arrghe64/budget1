@@ -13,9 +13,21 @@ const tags = [
 ];
 // Générer un identifiant unique basé sur le temps
 const id = Date.now();
+
 // liste des transactions récupérées depuis le localStorage (ou tableau vide)
-let transactions = JSON.parse(localStorage.getItem("transactions")) || []; 
-let total = transactions.reduce((sum, t) => sum +t.amount.toFixed(2)); // Recalcul du total
+let transactions = [];
+try {
+   transactions = JSON.parse(localStorage.getItem("transactions"));
+   if (!Array.isArray(transactions)) {
+     transactions = []; // Sécurise au cas où localStorage est corrompu
+   }
+} catch (error) {
+   console.log("Erreur de parsing JSON:", error);
+   localStorage.removeItem("transactions"); // Supprime les données corrompues
+   transactions = [];
+}
+
+let total = transactions.reduce((sum, t) => sum + parseFloat(t.amount), 0); // Recalcul du total
 
 //! Charger et/ou mettre à jour la liste des transactions
 function loadTransactions() {
